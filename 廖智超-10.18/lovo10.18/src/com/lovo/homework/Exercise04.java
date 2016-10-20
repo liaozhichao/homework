@@ -9,28 +9,28 @@ public class Exercise04 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner scanner=new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("请输入第一个字符串");
-		String str1=scanner.nextLine();
+		String str1 = scanner.nextLine();
 		System.out.println("请输入第二个字符串");
-		String str2=scanner.nextLine();
+		String str2 = scanner.nextLine();
 		System.out.println("两个字符串差值为"+compare(str1, str2));
 	}
 	public static int compare(String str1,String str2){
 		int result=0;
-		char[] a1=str1.toCharArray();
-		char[] a2=str2.toCharArray();
-		int length1=a1.length;
-		int length2=a2.length;
-		boolean flag=false;
-		int tempLength=Math.min(length1, length2);
+		char[] a1 = str1.toCharArray();
+		char[] a2 = str2.toCharArray();
+		int length1 = a1.length;
+		int length2 = a2.length;
+		boolean flag = false;//flag为false的话说明字符串有相同部分，只能通过长度的差值来比较
+		int tempLength = Math.min(length1, length2);
 		for(int i=0;i<tempLength;i++){
-			if(a1[i]!=a2[i]){
-				result+=a1[i]-a2[i];
-				flag=true;
+			if(a1[i] != a2[i]){
+				result += a1[i] - a2[i];
+				flag = true;
 			}
 		}
-		if(flag==false) result=length1-length2;
+		if(flag == false) result = length1-length2;
 		return result;
 	}
 	
